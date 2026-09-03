@@ -16,7 +16,6 @@
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-EW2WDE6012');
   </script>
 
@@ -32,6 +31,7 @@
       --card-bg: #ffffff;
       --text-color: #333333;
       --text-sub: #666666;
+      --publisher-color: #8a6a45;
     }
 
     * {
@@ -48,7 +48,6 @@
         "Hiragino Sans",
         Meiryo,
         sans-serif;
-
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.7;
@@ -72,25 +71,19 @@
     .header-inner {
       max-width: 1000px;
       margin: 0 auto;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       gap: 20px;
     }
 
     .logo {
       width: 90px;
       height: 90px;
-
       object-fit: contain;
-
       border-radius: 10px;
-
       background-color: #fff;
       padding: 5px;
-
       flex-shrink: 0;
     }
 
@@ -125,13 +118,17 @@
 
     .section-title {
       font-size: 1.5rem;
-
       border-bottom: 2px solid var(--primary-color);
-
       padding-bottom: 8px;
       margin-bottom: 30px;
-
       color: var(--primary-color);
+    }
+
+    .section-lead {
+      color: var(--text-sub);
+      margin-top: -15px;
+      margin-bottom: 25px;
+      font-size: 0.92rem;
     }
 
     /* =========================
@@ -140,35 +137,23 @@
 
     .book-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
     .book-card {
       background-color: var(--card-bg);
-
       border-radius: 8px;
       overflow: hidden;
-
-      box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.05);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
     }
 
     .book-card:hover {
       transform: translateY(-5px);
-
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     /* =========================
@@ -178,23 +163,48 @@
     .book-cover {
       width: 100%;
       height: 360px;
-
       background-color: #eee;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       overflow: hidden;
     }
 
     .book-cover img {
       width: 100%;
       height: 100%;
-
       object-fit: contain;
-
       background-color: #fff;
+    }
+
+    /* =========================
+       Coming Soon
+    ========================= */
+
+    .coming-soon-cover {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background:
+        linear-gradient(135deg, #edf1f3 0%, #f8f9fa 100%);
+      color: var(--primary-color);
+      text-align: center;
+      padding: 25px;
+    }
+
+    .coming-soon-cover .coming-label {
+      font-size: 1.65rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .coming-soon-cover .coming-sub {
+      font-size: 0.82rem;
+      color: var(--text-sub);
     }
 
     /* =========================
@@ -203,47 +213,44 @@
 
     .book-info {
       padding: 20px;
-
       display: flex;
       flex-direction: column;
-
       flex-grow: 1;
     }
 
     .book-tag {
       display: inline-block;
-
       background-color: #eef2f5;
       color: var(--primary-color);
-
       font-size: 0.75rem;
-
       padding: 3px 8px;
-
       border-radius: 4px;
-
       margin-bottom: 10px;
-
       align-self: flex-start;
+    }
+
+    .publisher-card .book-tag {
+      background-color: #f2ece5;
+      color: var(--publisher-color);
     }
 
     .book-title {
       font-size: 1.15rem;
-
       font-weight: bold;
-
-      margin-bottom: 10px;
-
+      margin-bottom: 8px;
       line-height: 1.5;
+    }
+
+    .book-author {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 12px;
     }
 
     .book-description {
       font-size: 0.9rem;
-
       color: var(--text-sub);
-
       margin-bottom: 20px;
-
       flex-grow: 1;
     }
 
@@ -253,26 +260,52 @@
 
     .btn-amazon {
       display: block;
-
       text-align: center;
-
       background-color: var(--accent-color);
-
       color: #fff;
-
       padding: 11px 0;
-
       border-radius: 6px;
-
       font-weight: bold;
-
       font-size: 0.95rem;
-
       transition: opacity 0.2s;
     }
 
     .btn-amazon:hover {
       opacity: 0.9;
+    }
+
+    .btn-coming {
+      display: block;
+      text-align: center;
+      background-color: #d9dee2;
+      color: #68727a;
+      padding: 11px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      cursor: default;
+    }
+
+    /* =========================
+       Kadofuku Books 出版書籍紹介
+    ========================= */
+
+    .publisher-section {
+      padding-top: 5px;
+    }
+
+    .publisher-section .section-title {
+      border-bottom-color: var(--publisher-color);
+      color: var(--publisher-color);
+    }
+
+    .publisher-intro {
+      background-color: #fffaf5;
+      border-left: 4px solid var(--publisher-color);
+      padding: 18px 20px;
+      margin-bottom: 30px;
+      color: #66584c;
+      font-size: 0.92rem;
     }
 
     /* =========================
@@ -281,13 +314,9 @@
 
     .profile-box {
       background-color: var(--card-bg);
-
       padding: 30px;
-
       border-radius: 8px;
-
-      box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .profile-box p {
@@ -304,13 +333,9 @@
 
     footer {
       text-align: center;
-
       padding: 30px 20px;
-
       background-color: #e9ecef;
-
       color: var(--text-sub);
-
       font-size: 0.85rem;
     }
 
@@ -319,7 +344,6 @@
     ========================= */
 
     @media (max-width: 600px) {
-
       header {
         padding: 35px 18px;
       }
@@ -368,10 +392,8 @@
   ========================== -->
 
   <header>
-
     <div class="header-inner">
 
-      <!-- logo.jpg は index.html と同じ場所に置く -->
       <img
         src="logo.jpg"
         alt="Kadofuku Books ロゴ"
@@ -379,18 +401,15 @@
       >
 
       <div class="header-text">
-
         <h1>門福 直久</h1>
 
         <p>
           日常の気づきや、人生をほんのり豊かにする本を
           Kindleで出版しています。
         </p>
-
       </div>
 
     </div>
-
   </header>
 
 
@@ -411,7 +430,6 @@
         出版書籍
       </h2>
 
-
       <div class="book-grid">
 
 
@@ -422,15 +440,11 @@
         <article class="book-card">
 
           <div class="book-cover">
-
-            <!-- book1.jpg は index.html と同じ場所 -->
             <img
               src="book1.jpg"
               alt="サクッと読めて、くすっと笑える!? 人生をほんのり豊かにする厳選豆知識15選"
             >
-
           </div>
-
 
           <div class="book-info">
 
@@ -438,27 +452,20 @@
               豆知識・雑学
             </span>
 
-
             <h3 class="book-title">
               サクッと読めて、くすっと笑える!?
               人生をほんのり豊かにする厳選豆知識15選
             </h3>
 
-
             <p class="book-description">
-
               「こんなことにも名前があったのか！」と
               驚くような、身近な現象を集めた豆知識集。
-
               15の用語を、それぞれ解説や由来、
               会話例とともに、ちょっとしたユーモアを
               交えて紹介しています。
-
               日常を少し面白くし、
               人生をほんのり豊かにする一冊です。
-
             </p>
-
 
             <a
               href="https://www.amazon.co.jp/dp/B0FLX56Z3Q"
@@ -475,7 +482,6 @@
         </article>
 
 
-
         <!-- =====================
              2冊目
         ====================== -->
@@ -483,15 +489,11 @@
         <article class="book-card">
 
           <div class="book-cover">
-
-            <!-- book2.jpg は index.html と同じ場所 -->
             <img
               src="book2.jpg"
               alt="心が晴れるスカイルネス習慣"
             >
-
           </div>
-
 
           <div class="book-info">
 
@@ -499,29 +501,21 @@
               ライフスタイル・心の習慣
             </span>
 
-
             <h3 class="book-title">
               心が晴れるスカイルネス習慣
             </h3>
 
-
             <p class="book-description">
-
               毎日ほんの2分、空を見上げるだけ。
-
               「空を見る瞑想＝スカイルネス」をテーマに、
               日常の中で簡単にできる心のリセット法を、
               やさしいエッセイと実践ヒントで綴った一冊です。
-
               悩みすぎてしまうとき、
               自信をなくしたとき、
               孤独を感じるとき。
-
               空を見上げる習慣から、
               「心に風が通る」感覚を届けます。
-
             </p>
-
 
             <a
               href="https://www.amazon.co.jp/dp/B0FSCVJLNB"
@@ -538,10 +532,192 @@
         </article>
 
 
+        <!-- =====================
+             3冊目 Coming Soon
+        ====================== -->
+
+        <article class="book-card">
+
+          <div class="book-cover">
+
+            <div class="coming-soon-cover">
+              <div class="coming-label">COMING SOON</div>
+              <div class="coming-sub">
+                Kadofuku Books<br>
+                第3弾、準備中です。
+              </div>
+            </div>
+
+          </div>
+
+          <div class="book-info">
+
+            <span class="book-tag">
+              次回作
+            </span>
+
+            <h3 class="book-title">
+              第3弾 Kindle書籍
+            </h3>
+
+            <p class="book-description">
+              Kadofuku Booksの次の一冊を準備中です。
+              日常を少し面白く、人生をほんのり豊かにする
+              本をお届けします。どうぞお楽しみに。
+            </p>
+
+            <span class="btn-coming">
+              Coming Soon
+            </span>
+
+          </div>
+
+        </article>
+
+
       </div>
 
     </section>
 
+
+    <!-- =========================
+         Kadofuku Books 出版書籍紹介
+    ========================== -->
+
+    <section class="publisher-section">
+
+      <h2 class="section-title">
+        Kadofuku Books 出版書籍紹介
+      </h2>
+
+      <p class="publisher-intro">
+        Kadofuku Booksから出版された、立山愛美さんの2冊をご紹介します。
+        妊娠・出産・子育ての日々に寄り添う、等身大のエッセイです。
+      </p>
+
+
+      <div class="book-grid">
+
+
+        <!-- =====================
+             立山愛美 1冊目
+        ====================== -->
+
+        <article class="book-card publisher-card">
+
+          <div class="book-cover">
+
+            <img
+              src="bookm1.jpg"
+              alt="怠惰なOL、産休中。なんだかんだ笑顔で過ごす妊婦エッセイ"
+            >
+
+          </div>
+
+          <div class="book-info">
+
+            <span class="book-tag">
+              妊娠・エッセイ
+            </span>
+
+            <h3 class="book-title">
+              怠惰なOL、産休中。
+              <br>
+              なんだかんだ笑顔で過ごす妊婦エッセイ
+            </h3>
+
+            <p class="book-author">
+              著者：立山愛美
+            </p>
+
+            <p class="book-description">
+              「怠惰なOL、産休中。」――タイトル通り、
+              基本的にぐうたらしながら過ごす妊婦生活。
+              朝はやたら眠く、四六時中何か食べたくなり、
+              突然不安に襲われる。
+              そんな情緒ジェットコースターの毎日を、
+              赤裸々に綴った妊婦エッセイです。
+              食欲と体重、理性と感情など、妊娠中ならではの
+              数々の戦いを、ユーモアを交えて描いています。
+              産休中のリアルな日々に、
+              ふっと笑えて、ちょっと自分を甘やかしたくなる一冊です。
+            </p>
+
+            <a
+              href="https://www.amazon.co.jp/dp/B0FVTYMFTK"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-amazon"
+              onclick="trackAmazonClick('bookm1', '怠惰なOL、産休中。')"
+            >
+              Amazonで見る
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================
+             立山愛美 2冊目
+        ====================== -->
+
+        <article class="book-card publisher-card">
+
+          <div class="book-cover">
+
+            <img
+              src="bookm2.jpg"
+              alt="眠るあいだのこと"
+            >
+
+          </div>
+
+          <div class="book-info">
+
+            <span class="book-tag">
+              育児・エッセイ
+            </span>
+
+            <h3 class="book-title">
+              眠るあいだのこと
+            </h3>
+
+            <p class="book-author">
+              著者：立山愛美
+            </p>
+
+            <p class="book-description">
+              赤ちゃんの泣き声に向き合う時間も、
+              抱きしめた腕の重さも、夜の静けさにふっとこぼれる
+              笑顔も――。
+              育児の日々は慌ただしく、思い通りにならないこと
+              ばかりなのに、何気ない瞬間が心に深く残っていきます。
+              泣いて、あやして、寄り添い、抱きしめながら、
+              親と子が少しずつ心の土台を耕していく。
+              そんなささやかな育児の場面を丁寧にまなざした随筆集です。
+              眠る前のひとときに読みたくなる、
+              やわらかく静かな言葉たちを綴っています。
+            </p>
+
+            <a
+              href="https://www.amazon.co.jp/dp/B0G6KP7FYP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-amazon"
+              onclick="trackAmazonClick('bookm2', '眠るあいだのこと')"
+            >
+              Amazonで見る
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
 
 
     <!-- =========================
@@ -554,32 +730,24 @@
         著者プロフィール
       </h2>
 
-
       <div class="profile-box">
 
         <p>
           <strong>門福 直久</strong>
         </p>
 
-
         <p>
-
           日常の中にある小さな気づきや、
           ちょっとした知識、心の持ち方などをテーマに
           Kindle書籍を執筆・出版しています。
-
         </p>
 
-
         <p>
-
           読んだ人が
           「少し心が軽くなる」
           「ちょっと誰かに話したくなる」
           「新しいことを試してみたくなる」。
-
           そんな本づくりを目指しています。
-
         </p>
 
       </div>
@@ -588,7 +756,6 @@
 
 
   </main>
-
 
 
   <!-- =========================
@@ -605,7 +772,6 @@
   </footer>
 
 
-
   <!-- =========================
        Amazonクリック計測
   ========================== -->
@@ -614,22 +780,9 @@
 
     function trackAmazonClick(bookNumber, bookTitle) {
 
-      /*
-       * GA4にAmazonクリックを送信します。
-       *
-       * book1:
-       * 1冊目のAmazonリンク
-       *
-       * book2:
-       * 2冊目のAmazonリンク
-       */
-
       gtag('event', 'amazon_click', {
-
         book_number: bookNumber,
-
         book_title: bookTitle
-
       });
 
     }
