@@ -6,25 +6,32 @@
 
   <title>門福 直久 | Kadofuku Books</title>
 
-  <meta
-    name="description"
-    content="門福直久が執筆・出版するKindle書籍を紹介する公式サイトです。"
-  >
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EW2WDE6012"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-EW2WDE6012');
+  </script>
 
   <style>
-
-    /* ========================================
+    /* =========================
        全体設定
-    ======================================== */
+    ========================= */
 
     :root {
-      --primary-color: #263746;
-      --accent-color: #d97732;
-      --bg-color: #f7f7f5;
+      --primary-color: #2c3e50;
+      --accent-color: #e67e22;
+      --bg-color: #f8f9fa;
       --card-bg: #ffffff;
       --text-color: #333333;
       --text-sub: #666666;
-      --border-color: #e5e5e5;
     }
 
     * {
@@ -52,14 +59,13 @@
       color: inherit;
     }
 
-
-    /* ========================================
+    /* =========================
        ヘッダー
-    ======================================== */
+    ========================= */
 
     header {
       background-color: var(--primary-color);
-      color: #ffffff;
+      color: #fff;
       padding: 45px 20px;
     }
 
@@ -71,213 +77,179 @@
       align-items: center;
       justify-content: center;
 
-      gap: 28px;
+      gap: 20px;
     }
 
-
-    /* ロゴ */
-
     .logo {
-      width: 105px;
-      height: 105px;
+      width: 90px;
+      height: 90px;
 
       object-fit: contain;
 
-      border-radius: 12px;
+      border-radius: 10px;
 
-      background-color: #ffffff;
+      background-color: #fff;
+      padding: 5px;
 
       flex-shrink: 0;
     }
-
-
-    /* 著者情報 */
 
     .header-text {
       text-align: left;
     }
 
-    .header-text .author {
+    .header-text h1 {
       font-size: 1.8rem;
-      font-weight: bold;
-
-      letter-spacing: 0.08em;
-
-      color: #ffffff;
-
       margin-bottom: 8px;
-    }
-
-    .header-text .catchcopy {
-      font-size: 1rem;
-
-      color: #d9dee2;
-
       letter-spacing: 0.04em;
     }
 
+    .header-text p {
+      font-size: 0.95rem;
+      color: #d7dde1;
+    }
 
-    /* ========================================
+    /* =========================
        メインコンテンツ
-    ======================================== */
+    ========================= */
 
     .container {
       max-width: 1000px;
-
       margin: 0 auto;
-
-      padding: 55px 20px;
+      padding: 50px 20px;
     }
 
     section {
-      margin-bottom: 70px;
+      margin-bottom: 65px;
     }
-
-
-    /* セクションタイトル */
 
     .section-title {
       font-size: 1.5rem;
 
-      color: var(--primary-color);
-
       border-bottom: 2px solid var(--primary-color);
 
-      padding-bottom: 10px;
-
+      padding-bottom: 8px;
       margin-bottom: 30px;
+
+      color: var(--primary-color);
     }
 
-
-    /* ========================================
-       書籍一覧
-    ======================================== */
+    /* =========================
+       書籍ギャラリー
+    ========================= */
 
     .book-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
 
       gap: 30px;
     }
 
-
-    /* 書籍カード */
-
     .book-card {
       background-color: var(--card-bg);
 
-      border: 1px solid var(--border-color);
-
-      border-radius: 10px;
-
+      border-radius: 8px;
       overflow: hidden;
 
-      display: flex;
-
-      flex-direction: column;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
 
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+
+      display: flex;
+      flex-direction: column;
     }
 
     .book-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
 
       box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08);
+        0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
-
-    /* 書影 */
+    /* =========================
+       書影
+    ========================= */
 
     .book-cover {
       width: 100%;
-
       height: 360px;
 
-      background-color: #eeeeee;
+      background-color: #eee;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
+
+      overflow: hidden;
     }
 
     .book-cover img {
       width: 100%;
-
       height: 100%;
 
       object-fit: contain;
+
+      background-color: #fff;
     }
 
-
-    /* 書籍情報 */
+    /* =========================
+       書籍情報
+    ========================= */
 
     .book-info {
-      padding: 25px;
+      padding: 20px;
 
       display: flex;
-
       flex-direction: column;
 
       flex-grow: 1;
     }
 
-
-    /* カテゴリー */
-
     .book-tag {
       display: inline-block;
 
       background-color: #eef2f5;
-
       color: var(--primary-color);
 
       font-size: 0.75rem;
 
-      padding: 4px 9px;
+      padding: 3px 8px;
 
       border-radius: 4px;
 
-      margin-bottom: 12px;
+      margin-bottom: 10px;
 
       align-self: flex-start;
     }
-
-
-    /* 書籍タイトル */
 
     .book-title {
       font-size: 1.15rem;
 
       font-weight: bold;
 
-      margin-bottom: 15px;
+      margin-bottom: 10px;
 
       line-height: 1.5;
     }
-
-
-    /* 書籍説明 */
 
     .book-description {
       font-size: 0.9rem;
 
       color: var(--text-sub);
 
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       flex-grow: 1;
     }
 
-
-    /* ========================================
+    /* =========================
        Amazonボタン
-    ======================================== */
+    ========================= */
 
     .btn-amazon {
       display: block;
@@ -286,56 +258,49 @@
 
       background-color: var(--accent-color);
 
-      color: #ffffff;
+      color: #fff;
 
-      padding: 12px 10px;
+      padding: 11px 0;
 
       border-radius: 6px;
 
       font-weight: bold;
 
-      font-size: 0.9rem;
+      font-size: 0.95rem;
 
       transition: opacity 0.2s;
     }
 
     .btn-amazon:hover {
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
-
-    /* ========================================
-       著者プロフィール
-    ======================================== */
+    /* =========================
+       プロフィール
+    ========================= */
 
     .profile-box {
       background-color: var(--card-bg);
 
-      border: 1px solid var(--border-color);
-
       padding: 30px;
 
-      border-radius: 10px;
-    }
+      border-radius: 8px;
 
-    .profile-name {
-      font-size: 1.2rem;
-
-      font-weight: bold;
-
-      margin-bottom: 15px;
-
-      color: var(--primary-color);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .profile-box p {
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
 
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
 
-    /* ========================================
+    /* =========================
        フッター
-    ======================================== */
+    ========================= */
 
     footer {
       text-align: center;
@@ -346,151 +311,101 @@
 
       color: var(--text-sub);
 
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
+    /* =========================
+       スマートフォン
+    ========================= */
 
-    /* ========================================
-       スマートフォン対応
-    ======================================== */
-
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
 
       header {
         padding: 35px 18px;
       }
 
-
       .header-inner {
-        gap: 18px;
-
         justify-content: flex-start;
+        gap: 15px;
       }
-
-
-      /* スマホではロゴを少し小さく */
 
       .logo {
-        width: 78px;
-
-        height: 78px;
-
-        border-radius: 9px;
+        width: 70px;
+        height: 70px;
       }
 
-
-      /* 著者名 */
-
-      .header-text .author {
-        font-size: 1.45rem;
-
-        letter-spacing: 0.06em;
+      .header-text h1 {
+        font-size: 1.35rem;
       }
 
-
-      /* キャッチコピー */
-
-      .header-text .catchcopy {
-        font-size: 0.78rem;
-
-        line-height: 1.5;
+      .header-text p {
+        font-size: 0.8rem;
       }
-
-
-      /* メイン */
 
       .container {
-        padding: 40px 16px;
+        padding: 40px 15px;
       }
-
-
-      /* 書籍を1列に */
-
-      .book-grid {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-      }
-
-
-      /* 書影 */
-
-      .book-cover {
-        height: 390px;
-      }
-
-
-      .book-info {
-        padding: 22px;
-      }
-
 
       .section-title {
         font-size: 1.3rem;
       }
 
+      .book-cover {
+        height: 330px;
+      }
+
+      .profile-box {
+        padding: 22px;
+      }
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- ========================================
+  <!-- =========================
        ヘッダー
-  ======================================== -->
+  ========================== -->
 
   <header>
 
     <div class="header-inner">
 
-
-      <!-- Kadofuku Books ロゴ -->
-
+      <!-- logo.jpg は index.html と同じ場所に置く -->
       <img
         src="logo.jpg"
         alt="Kadofuku Books ロゴ"
         class="logo"
       >
 
-
-      <!-- 著者情報 -->
-
       <div class="header-text">
 
-        <p class="author">
-          門福 直久
-        </p>
+        <h1>門福 直久</h1>
 
-        <p class="catchcopy">
-          日常を少し面白く、人生をほんのり豊かに。
+        <p>
+          日常の気づきや、人生をほんのり豊かにする本を
+          Kindleで出版しています。
         </p>
 
       </div>
-
 
     </div>
 
   </header>
 
 
-
-  <!-- ========================================
-       メインコンテンツ
-  ======================================== -->
+  <!-- =========================
+       メイン
+  ========================== -->
 
   <main class="container">
 
 
-    <!-- ====================================
-         書籍一覧
-    ===================================== -->
+    <!-- =========================
+         出版書籍
+    ========================== -->
 
     <section>
-
 
       <h2 class="section-title">
         出版書籍
@@ -500,29 +415,24 @@
       <div class="book-grid">
 
 
-        <!-- =================================
+        <!-- =====================
              1冊目
-        ================================== -->
+        ====================== -->
 
         <article class="book-card">
 
-
-          <!-- 書影 -->
-
           <div class="book-cover">
 
+            <!-- book1.jpg は index.html と同じ場所 -->
             <img
               src="book1.jpg"
-              alt="厳選豆知識15選の書影"
+              alt="サクッと読めて、くすっと笑える!? 人生をほんのり豊かにする厳選豆知識15選"
             >
 
           </div>
 
 
-          <!-- 書籍情報 -->
-
           <div class="book-info">
-
 
             <span class="book-tag">
               豆知識・雑学
@@ -537,20 +447,15 @@
 
             <p class="book-description">
 
-              日常生活の中で
-              「こんなことにも名前があったのか！」
-              と驚くような、身近な現象を集めた豆知識集です。
+              「こんなことにも名前があったのか！」と
+              驚くような、身近な現象を集めた豆知識集。
 
-              <br><br>
+              15の用語を、それぞれ解説や由来、
+              会話例とともに、ちょっとしたユーモアを
+              交えて紹介しています。
 
-              15の用語を取り上げ、
-              それぞれの解説や由来、会話例を、
-              ちょっとしたユーモアを交えて紹介しています。
-
-              <br><br>
-
-              軽く読めるのに、知的好奇心をくすぐられる。
-              日常をちょっと面白くする一冊です。
+              日常を少し面白くし、
+              人生をほんのり豊かにする一冊です。
 
             </p>
 
@@ -560,52 +465,43 @@
               target="_blank"
               rel="noopener noreferrer"
               class="btn-amazon"
+              onclick="trackAmazonClick('book1', '厳選豆知識15選')"
             >
               Amazonで見る
             </a>
 
-
           </div>
-
 
         </article>
 
 
 
-        <!-- =================================
+        <!-- =====================
              2冊目
-        ================================== -->
+        ====================== -->
 
         <article class="book-card">
 
-
-          <!-- 書影 -->
-
           <div class="book-cover">
 
+            <!-- book2.jpg は index.html と同じ場所 -->
             <img
               src="book2.jpg"
-              alt="心が晴れるスカイフルネス習慣の書影"
+              alt="心が晴れるスカイルネス習慣"
             >
 
           </div>
 
 
-          <!-- 書籍情報 -->
-
           <div class="book-info">
 
-
             <span class="book-tag">
-              心・習慣・ライフスタイル
+              ライフスタイル・心の習慣
             </span>
 
 
             <h3 class="book-title">
-              心が晴れるスカイフルネス習慣
-              ―空×マインドフルネス。
-              毎日2分、空を見上げるだけで
-              心に風が通り、人生がほんのり豊かに
+              心が晴れるスカイルネス習慣
             </h3>
 
 
@@ -613,23 +509,16 @@
 
               毎日ほんの2分、空を見上げるだけ。
 
-              <br><br>
-
-              本書は「空を見る瞑想＝スカイフルネス」をテーマに、
+              「空を見る瞑想＝スカイルネス」をテーマに、
               日常の中で簡単にできる心のリセット法を、
               やさしいエッセイと実践ヒントで綴った一冊です。
-
-              <br><br>
 
               悩みすぎてしまうとき、
               自信をなくしたとき、
               孤独を感じるとき。
 
-              <br><br>
-
-              そんなとき、ふと空を見上げる。
-              難しい理論を必要とせず、
-              「心に風が通る」感覚を味わうための習慣を紹介します。
+              空を見上げる習慣から、
+              「心に風が通る」感覚を届けます。
 
             </p>
 
@@ -639,13 +528,12 @@
               target="_blank"
               rel="noopener noreferrer"
               class="btn-amazon"
+              onclick="trackAmazonClick('book2', 'スカイルネス習慣')"
             >
               Amazonで見る
             </a>
 
-
           </div>
-
 
         </article>
 
@@ -656,12 +544,11 @@
 
 
 
-    <!-- ========================================
+    <!-- =========================
          著者プロフィール
-    ========================================= -->
+    ========================== -->
 
     <section>
-
 
       <h2 class="section-title">
         著者プロフィール
@@ -670,33 +557,32 @@
 
       <div class="profile-box">
 
-
-        <p class="profile-name">
-          門福 直久
+        <p>
+          <strong>門福 直久</strong>
         </p>
 
 
         <p>
-          日常の何気ない気づきや、暮らしの中で感じることを、
-          独自の視点で切り取り、Kindle書籍として発信しています。
+
+          日常の中にある小さな気づきや、
+          ちょっとした知識、心の持ち方などをテーマに
+          Kindle書籍を執筆・出版しています。
+
         </p>
 
 
         <p>
+
           読んだ人が
           「少し心が軽くなる」
           「ちょっと誰かに話したくなる」
           「新しいことを試してみたくなる」。
+
+          そんな本づくりを目指しています。
+
         </p>
-
-
-        <p>
-          そんな、小さな変化を生み出せる本づくりを目指しています。
-        </p>
-
 
       </div>
-
 
     </section>
 
@@ -705,17 +591,50 @@
 
 
 
-  <!-- ========================================
+  <!-- =========================
        フッター
-  ========================================= -->
+  ========================== -->
 
   <footer>
 
     <p>
-      &copy; 2026 Kadofuku Books. All Rights Reserved.
+      &copy; 2026 門福 直久 / Kadofuku Books.
+      All Rights Reserved.
     </p>
 
   </footer>
+
+
+
+  <!-- =========================
+       Amazonクリック計測
+  ========================== -->
+
+  <script>
+
+    function trackAmazonClick(bookNumber, bookTitle) {
+
+      /*
+       * GA4にAmazonクリックを送信します。
+       *
+       * book1:
+       * 1冊目のAmazonリンク
+       *
+       * book2:
+       * 2冊目のAmazonリンク
+       */
+
+      gtag('event', 'amazon_click', {
+
+        book_number: bookNumber,
+
+        book_title: bookTitle
+
+      });
+
+    }
+
+  </script>
 
 
 </body>
